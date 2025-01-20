@@ -9,11 +9,12 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
 
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post("http://localhost:3001/login", { email, password })
+            .post('https://server-wtdl.vercel.app/login', { email, password })
             .then((result) => {
                 if (result.data.message === "Success") {
                     alert("Login successful!"); // Success pop-up
