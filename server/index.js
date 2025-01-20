@@ -52,7 +52,7 @@ const EmployeeModel = require("./models/Employee");
 
 const app = express();
 const corsOptions = {
-  origin:"*",
+  origin:"https://server-wea6.vercel.app",
   optionSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
