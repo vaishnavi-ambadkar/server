@@ -56,7 +56,7 @@ app.use(express.json());
 app.use(express.json());
 app.use(cors(
   {
-    origin:[""],
+    origin:["https://server-7odm.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }
