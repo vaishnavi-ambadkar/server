@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post('https://server-wtdl.vercel.app/login', { email, password })
+            .post('https://vercel.com/sunitas-projects-77c63aaa/server-vhbb/login', { email, password })
             .then((result) => {
                 if (result.data.message === "Success") {
                     alert("Login successful!"); // Success pop-up
