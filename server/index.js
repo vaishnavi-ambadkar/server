@@ -52,7 +52,7 @@ const EmployeeModel = require("./models/Employee");
 
 const cors = require('cors');
 app.use(cors({
-  origin: '', // Allow your frontend domain
+  origin: 'https://server-wb5o.vercel.app', // Allow your frontend domain
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add the methods your API supports
   credentials: true, // Include this if cookies or credentials are required
 }));
