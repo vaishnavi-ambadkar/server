@@ -50,12 +50,16 @@ const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const EmployeeModel = require("./models/Employee");
 
-var express = require('express');
 var cors = require('cors');
+var corsOptions ={
+  origin: '*',
+  optionSuccessStatus:200,
+}
 
 const app = express();
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(cors());
+
 
 // Cloudinary Configuration
 cloudinary.config({
@@ -85,9 +89,9 @@ mongoose.connect(
     useUnifiedTopology: true,
   }
 )
-  app.get("/",(req,res) =>{
-    res.json("Hi");
-  })
+  // app.get("/",(req,res) =>{
+  //   res.json("Hi");
+  // })
          )
   .then(() => {
     console.log("MongoDB connected successfully");
