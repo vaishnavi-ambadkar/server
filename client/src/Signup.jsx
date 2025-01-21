@@ -293,7 +293,7 @@ function Signup() {
 
         // Ensure the backend is listening on the correct endpoint and port
         axios
-            .post('https://vercel.com/sunitas-projects-77c63aaa/server-vhbb', formData, {
+            .post('https://server-hazel-six-63.vercel.app', formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             })
             .then((result) => {
