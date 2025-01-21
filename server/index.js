@@ -44,20 +44,26 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-const cors = require("cors");
+//const cors = require("cors");
 const multer = require("multer");
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const EmployeeModel = require("./models/Employee");
 
-var cors = require('cors');
-var corsOptions ={
-  origin: '*',
-  optionSuccessStatus:200,
-}
+const cors = require('cors');
+app.use(cors({
+  origin: '', // Allow your frontend domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add the methods your API supports
+  credentials: true, // Include this if cookies or credentials are required
+}));
 
 const app = express();
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+app.get('/api/signup', (req, res) => {
+  res.json({ message: 'This is an example response' });
+});
+
 app.use(express.json());
 
 
