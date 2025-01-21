@@ -50,17 +50,12 @@ const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
 const EmployeeModel = require("./models/Employee");
 
+var express = require('express');
+var cors = require('cors');
+
 const app = express();
 app.use(express.json());
-
-app.use(express.json());
-app.use(cors(
-  {
-    origin:["https://server-7odm.vercel.app"],
-    methods: ["POST","GET"],
-    credentials: true
-  }
-));
+app.use(cors());
 
 // Cloudinary Configuration
 cloudinary.config({
